@@ -6,7 +6,7 @@ spec:
   selector:
     app: knote
   ports:
-    - port: 5000
+    - port: 8080
       targetPort: 5000
   type: LoadBalancer
 ---
@@ -28,5 +28,5 @@ spec:
         - name: knote
           image: beingnaren/simple-node-docker-files
           ports:
-            - containerPort: 5000
+            - containerPort: 8080
           imagePullPolicy: Always
