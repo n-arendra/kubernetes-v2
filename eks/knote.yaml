@@ -7,7 +7,7 @@ spec:
     app: knote
   ports:
     - port: 8080
-      targetPort: 5000
+      targetPort: 80
   type: LoadBalancer
 ---
 apiVersion: apps/v1
@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
         - name: knote
-          image: beingnaren/simple-node-docker-files
+          image: beingnaren/pyimage
           ports:
-            - containerPort: 8080
+            - containerPort: 80
           imagePullPolicy: Always
