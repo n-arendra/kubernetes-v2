@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: deploymentclusterip
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: appclusterip
@@ -14,9 +14,9 @@ spec:
     spec:
       containers:
         - name: containerclusterip
-          image: andalike/node8080
+          image: beingnaren/pyimage
           ports:
-            - containerPort: 8080
+            - containerPort: 80
 ---
 apiVersion: v1
 kind: Service
@@ -29,5 +29,5 @@ spec:
     - name: http
       protocol: TCP
       port: 80
-      targetPort: 8080
+      targetPort: 80
   type: ClusterIP
